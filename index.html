@@ -10,19 +10,29 @@
     <link rel="stylesheet" href="/style.css" />
     
     <!-- import the latest version of hydra synth-->
-    <script src="https://unpkg.com/hydra-synth"></script>
-   
+<!--     <script src="https://unpkg.com/hydra-synth"></script> -->
+   <script src="./hydra-synth.js"></script> 
   </head>
   <body>
-    <h1>hydra on the net</h1>
+    <h1>hydra in your own website</h1>
     <button onclick="osc(10).out()"> click </button>
-
+    <button onclick="useCamera()"> camera </button>
     <script>
+      // create a new hydra instance
       var hydra = new Hydra({
         width: 200,
         height: 200
-      });
-      osc(2).out();
+      })
+      
+      osc(2).out()
+      
+      // create functions to use with buttons
+      function useCamera() {
+        s0.initCam()
+        src(s0).color(-1, 1, out()
+      }
+      
+      
     </script>
   </body>
 </html>
