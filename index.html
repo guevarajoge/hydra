@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>hydra on my site</title>
+    <title>hydra on a webpage</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,24 +14,25 @@
    <script src="./hydra-synth.js"></script> 
   </head>
   <body>
-    <h1>hydra in your own website</h1>
+    <h1><a href="https://hydra-editor.glitch.me">hydra</a> on a webpage</h1>
     <button onclick="osc(10).out()"> click </button>
     <button onclick="useCamera()"> camera </button>
+    <canvas id="myCanvas" width="400px" height="400px"></canvas>
     <script>
-      // create a new hydra instance
+      // create a new hydra-synth instance
       var hydra = new Hydra({
         width: 200,
-        height: 200
+        height: 200,
+        canvas: document.getElementById("myCanvas")
       })
       
-      osc(2).out()
+      osc(10, 0.05, 0.8).rotate(0, 0.1).kaleid().color(-1, 1).out()
       
       // create functions to use with buttons
       function useCamera() {
         s0.initCam()
-        src(s0).color(-1, 1, out()
+        src(s0).color(-1, Math.random()*2, 1).colorama().out()
       }
-      
       
     </script>
   </body>
